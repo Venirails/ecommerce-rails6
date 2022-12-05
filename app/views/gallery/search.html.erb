@@ -1,2 +1,20 @@
-<h1>Gallery#search</h1>
-<p>Find me in app/views/gallery/search.html.erb</p>
+<h3> Search Result</h3>
+<table>
+<tr>
+<% count=0 %>
+<% @flowers_gallery.each do |flower|%>
+
+<% if (count % 3) == 0%>
+</tr>
+<tr>
+<% end %>
+<% count+=1 %>
+<td><%= image_tag flower.product_image ,:height=>"100",:width=>"100" %><br />
+<%= flower.name %><br />
+Color :<%= flower.color %><br />
+Price : <%= flower.price %><br />
+<%= button_to 'Buy now',line_items_path(:store_id => flower.id)%>
+ </td>
+<% end %>
+</tr>
+</table>

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post 'gallery/checkout'
 
   get 'gallery/search'
+  post 'gallery/search'
   get 'gallery/purchase_complete'
   resources :stores
   get 'admin/login'

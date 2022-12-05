@@ -14,4 +14,8 @@
 	<%= link_to "Continue Shopping",:controller=>"gallery",:action=>"index" %> | 
 
 <% end %>
+<% if user_signed_in? %>
 <%= link_to "Checkout", gallery_checkout_path %>
+<% else %>
+<%= link_to "Checkout", new_user_session_path %>
+<% end %>

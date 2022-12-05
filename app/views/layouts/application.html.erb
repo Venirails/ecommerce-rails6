@@ -68,10 +68,11 @@
         	<div class="templatemo_right_section">
             	<h4>Search</h4>
                 <div class="templatemo_right_section_content">
-                    <form method="get" action="#">
-                            <input name="keyword" type="text" id="keyword"/>
-                            <input type="submit" name="submit" class="button" value="Search" />
-                     </form>
+                    <%= form_with url: "/gallery/search", method: :post do |form| %>
+                        <%= form.label :query, "Search for:" %>
+                        <%= form.text_field :keyword %>
+                        <%= form.submit "Search" %>
+                    <% end %>
                  </div>
             </div>
             
